@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="/css/qrcode.css">
+  <!-- <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .container { max-width: 500px; margin: auto; text-align: center; }
+    input, select, button { margin: 0.5rem; padding: 0.5rem; width: 90%; }
+    img { margin-top: 1rem; max-width: 100%; border: 1px solid #ccc; padding: 10px; }
+    #result { margin-top: 1rem; font-weight: bold; }
+  </style> -->
+</head>
+<body>
+  <div class="container">
+    <h2>QR Code Generator</h2>
+
+    <label>Type:</label>
+    <select id="type">
+      <option value="TEXT">Text</option>
+      <option value="LINK">Link</option>
+      <option value="IMAGE">Image URL</option>
+      <option value="PDF">PDF URL</option>
+    </select>
+
+    <label>Content (Text/Link/File URL):</label>
+    <input type="text" id="content" placeholder="Enter text, link, or file URL">
+
+    <label>Validity (in seconds):</label>
+    <input type="number" id="validity" value="60">
+
+    <button onclick="generateQRCode()">Generate QR Code</button>
+
+    <h3>Generated QR Code:</h3>
+    <img id="qrImage" style="display:none;">
+
+    <h3>Get the Data Via (by token):</h3>
+    <input type="text" id="scanToken" placeholder="Enter QR token" required>
+    <button onclick="scanQRCode()">Button</button>
+    <div id="result">
+      <img src="" id="image1" alt="">
+    </div>
+  </div>
+
+  <script src="/js/qrcode.js"></script>
+</body>
+</html>
