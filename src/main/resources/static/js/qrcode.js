@@ -1,4 +1,7 @@
-const API_BASE = "http://localhost:8080/qr"; // backend base URL
+const API_BASE =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8080/qr"
+    : "https://qrcode-generator-dfad.onrender.com/qr"; // backend base URL
 
 // ✅ Generate QR Code
 async function generateQRCode() {
