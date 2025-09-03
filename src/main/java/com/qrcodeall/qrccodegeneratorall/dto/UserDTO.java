@@ -1,13 +1,14 @@
 package com.qrcodeall.qrccodegeneratorall.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Data;
 
-@Entity
+@Document(collection = "userdto")
 @Data
-@Table(name = "UsersInfo")
+
 public class UserDTO {
     @Id
     private String id;

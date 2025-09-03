@@ -25,7 +25,7 @@ public class LoginService {
     }
 
     public String registerUser(Register register){
-        if(userRepo.findByUsername(register.getUsername()).isPresent()){
+        if(userRepo.findByusername(register.getUsername()).isPresent()){
             return "UserName"+register.getUsername()+ "already present";
         }
         if(userRepo.findByemail(register.getEmail()).isPresent()){
@@ -44,7 +44,7 @@ public class LoginService {
     }
 
     public String loginUser(Login login){
-        Optional<UserDTO> user=userRepo.findByUsername(login.getUsername());
+        Optional<UserDTO> user=userRepo.findByusername(login.getUsername());
         
         if(user.isPresent() && passwordEncoder().matches(login.getPassword(), user.get().getPassword()) ){
             return "Login successful!";
