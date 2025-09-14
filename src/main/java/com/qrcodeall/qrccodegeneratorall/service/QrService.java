@@ -42,8 +42,9 @@ public class QrService {
         if (fileUrl != null && !fileUrl.startsWith("http://") && !fileUrl.startsWith("https://")) {
          fileUrl = "https://" + fileUrl;
             }
-
-        String qrLink = "http://localhost:8080/qr/" + token;
+        
+        String baseUrl="https://qrcode-generator-dfad.onrender.com";
+        String qrLink = baseUrl + "/qr/" + token;
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(qrLink, BarcodeFormat.QR_CODE, 300, 300);
 
